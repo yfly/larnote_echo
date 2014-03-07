@@ -10,9 +10,11 @@
 	</title>
 	{{ HTML::style('css/bootstrap.css')}}
 	{{ HTML::style('css/styles.css')}}
-	<script src="js/jquery.js"></script>
-	<script src="js/alert.js"></script>
-	<script src="js/bootstrap.js"></script>
+	{{ HTML::style('ckeditor/contents.css')}}
+	<script src="http://localhost/advanceclass/noteappecho/public/js/jquery.js"></script>
+	<script src="http://localhost/advanceclass/noteappecho/public/js/alert.js"></script>
+	<script src="http://localhost/advanceclass/noteappecho/public/js/bootstrap.js"></script>
+	<script src="http://localhost/advanceclass/noteappecho/public/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<div id="flash-message">
@@ -21,6 +23,7 @@
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>	
 				{{ Session::get('success') }}
 			</div>
+			
 		@elseif(Session::has('deleted-note'))			
 			<div class="alert alert-success col-md-3">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -28,7 +31,6 @@
 			</div>
 
 		@elseif(Session::has('edited-note'))
-
 			<div class="alert alert-success col-md-3">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 				{{ Session::get('edited-note') }}

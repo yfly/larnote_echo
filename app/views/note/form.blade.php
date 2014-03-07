@@ -8,6 +8,11 @@
 
 {{ text_field('title', 'Title', $note->title) }}
 {{ textarea_field('content', 'Content', $note->content) }}
+<script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'content' );
+</script>
 
 <div class="form-group">
 	<div class="col-lg-offset-2 col-lg-10">
