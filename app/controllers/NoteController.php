@@ -6,7 +6,6 @@ class NoteController extends BaseController{
 	{
 		$lists = Note::all();
 		$site_title= "Note";
-
 		return View::make('note.index', compact('site_title', 'lists'));
 	}
 	
@@ -19,6 +18,7 @@ class NoteController extends BaseController{
 		{
 			$note->title = Input::get('title');
 			$note->content= Input::get('content');
+			$note->user_id= Auth::user()->id;
 			$note->save();
 			return Redirect::to('note')->with('success', 'Successfully Create');
 		}
@@ -34,11 +34,13 @@ class NoteController extends BaseController{
 		{
 			$note->title = Input::get('title');
 			$note->content= Input::get('content');
+			$note->user_id= Auth::user()->$id;
 			$note->save();
 			return Redirect::to('note')->with('edited-note', 'Successfully Updated');
 		}
 		return View::make('note.form', compact('site_title', 'note'));
 	}
+
 	// For Delet Note
 	public function delete($id)
 	{

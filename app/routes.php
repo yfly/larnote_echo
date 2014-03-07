@@ -21,3 +21,8 @@ Route::get('note', 'NoteController@index');
 Route::any('note/create', 'NoteController@create');
 Route::any('note/edit/{id}', 'NoteController@edit');
 Route::get('note/delete/{id}', 'NoteController@delete');
+
+Route::any('login', 'UserController@login');
+Route::any('logout', 'UserController@logout');
+
+Route::when('note/*' , 'auth');

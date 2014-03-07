@@ -35,6 +35,11 @@
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 				{{ Session::get('edited-note') }}
 			</div>
+		@elseif(Session::has('logout'))
+			<div class="alert alert-success col-md-3">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				{{ Session::get('logout') }}
+			</div>
 		@endif
 	</div>
 
@@ -46,6 +51,10 @@
 			<ul class="nav navbar-nav">
 				<li><a href="http://localhost/advanceclass/noteappecho/public/note">Notes</a></li>
 			    	<li><a href="http://localhost/advanceclass/noteappecho/public/note/create">Create</a></li>
+			<?php if (Auth::check())
+			{ ?>
+			    	<li><a href="http://localhost/advanceclass/noteappecho/public/logout">logout</a></li>
+			<?php } ?>
 			</ul>
 		</div>
 
@@ -58,7 +67,6 @@
 </script>
 <script type="text/javascript">
 	$('#flash-message').delay(2000).slideUp(1000);
-
 </script> 
 </body>
 </html>

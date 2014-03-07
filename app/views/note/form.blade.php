@@ -9,8 +9,6 @@
 {{ text_field('title', 'Title', $note->title) }}
 {{ textarea_field('content', 'Content', $note->content) }}
 <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
                 CKEDITOR.replace( 'content' );
 </script>
 
