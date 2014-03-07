@@ -1,0 +1,16 @@
+body{
+	padding-top:70px;
+}
+.container{
+	width:960px;
+	margin:0 auto;
+}
+
+#flash-message > div {
+	position: absolute;
+	right: 59px;
+	bottom: 59px;
+}
+.alert-success {
+	box-shadow: 0px 2px 1px;
+}
